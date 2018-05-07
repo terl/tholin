@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) Terl Tech Ltd • 06/06/18 10:45 • goterl.com
+  ~
+  ~ This Source Code Form is subject to the terms of the Mozilla Public
+  ~ License, v2.0. If a copy of the MPL was not distributed with this
+  ~ file, you can obtain one at http://mozilla.org/MPL/2.0/.
+  -->
+
+<resources>
+    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <!-- Show a splash screen on the activity. Automatically removed when
+             Flutter draws its first frame -->
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+</resources>
