@@ -68,8 +68,8 @@ class _CardsPageState extends State<CardsPage> {
     return FloatingActionButton(
         mini: true,
         elevation: 12.0,
-        backgroundColor: MainTheme.primaryLight[400],
-        child: Icon(ico, color: MainTheme.black[50]),
+        backgroundColor: MainTheme.primary[200],
+        child: Icon(ico, color: Colors.black87),
         onPressed: _sendPress);
   }
 
@@ -112,7 +112,7 @@ class _CardsPageState extends State<CardsPage> {
   }
 
   _buildCard() {
-    const padding = EdgeInsets.only(top: 34.0, left: 26.0, right: 26.0, bottom: 28.0);
+    const padding = EdgeInsets.only(top: 60.0, left: 26.0, right: 26.0, bottom: 40.0);
     return new Stack(
         alignment: AlignmentDirectional.center,
         children: [
