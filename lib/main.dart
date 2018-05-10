@@ -9,11 +9,10 @@
 import 'package:flutter/material.dart';
 import 'package:tholin/slim_icons.dart';
 import 'theme.dart';
-import 'wallets_page.dart';
+import 'cards_page.dart';
 import 'transfer_page.dart';
 
 void main() => runApp(new MyApp());
-
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -23,12 +22,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: "Ginora Sans",
-        primaryColor: MainTheme.primary[700],
-        backgroundColor: MainTheme.primary[600],
-        canvasColor: MainTheme.primaryLight[700],
-        textTheme: Theme.of(context).textTheme.copyWith(caption: new TextStyle(color: Colors.black38))
-      ),
+          fontFamily: "Ginora Sans",
+          primaryColor: MainTheme.primary[700],
+          backgroundColor: MainTheme.primary[600],
+          canvasColor: MainTheme.primaryLight[700],
+          textTheme: Theme
+              .of(context)
+              .textTheme
+              .copyWith(caption: new TextStyle(color: Colors.black38))),
       home: MainPage(title: 'Flutter A Home Page'),
     );
   }
@@ -66,10 +67,13 @@ class _MainPageState extends State<MainPage> {
         duration: new Duration(milliseconds: 120), curve: Curves.linear);
   }
 
+  void _onCenterAppBarBtnPress() {}
+
   _buildNavItem(String text, IconData icon) {
     return BottomNavigationBarItem(
       icon: new Icon(icon, size: 20.0),
-      title: new Text(text, style: TextStyle(height: 1.3, fontWeight: FontWeight.bold)),
+      title: new Text(text,
+          style: TextStyle(height: 1.3, fontWeight: FontWeight.bold)),
     );
   }
 
@@ -78,36 +82,30 @@ class _MainPageState extends State<MainPage> {
       backgroundColor: MainTheme.primary[200],
       elevation: 0.4,
       centerTitle: true,
-      leading: IconButton(padding: EdgeInsets.only(left: 8.0, top: 12.0, right: 8.0, bottom: 8.0),icon: Icon(MarketingIcons.lineGraph, color: Colors.black, size: 20.0)),
+      leading: IconButton(
+          padding:
+              EdgeInsets.only(left: 8.0, top: 12.0, right: 8.0, bottom: 8.0),
+          icon:
+              Icon(MarketingIcons.lineGraph, color: Colors.black, size: 20.0)),
       actions: [
-        IconButton(icon: Icon(UIIcons.toggleSwitches, color: Colors.black, size: 20.0)),
+        IconButton(
+            icon:
+                Icon(UIIcons.toggleSwitches, color: Colors.black, size: 20.0)),
       ],
       title: new Theme(
         isMaterialAppTheme: true,
         data: new ThemeData.light(),
-        child: new DropdownButtonHideUnderline(
-          child: new DropdownButton<String>(
-            style: TextStyle(
-                fontFamily: "Ginora Sans",
-                color: Colors.black87,
-                fontWeight: FontWeight.bold),
-            value: _account,
-            items: <DropdownMenuItem<String>>[
-              new DropdownMenuItem(
-                child: new Text('Family',
-                    overflow: TextOverflow.ellipsis, maxLines: 1),
-                value: 'one',
-              ),
-              new DropdownMenuItem(
-                child: new Text('Personal'),
-                value: 'two',
-              ),
-            ],
-            onChanged: (String value) {
-              setState(() => _account = value);
-            },
-          ),
-        ),
+        child: new FlatButton(
+            onPressed: _onCenterAppBarBtnPress,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Text("Personal", style: TextStyle(fontFamily: "Ginora Sans", fontWeight: FontWeight.bold)),
+                Container(width: 2.0),
+                Icon(Icons.compare_arrows, size: 14.0),
+              ],
+            ),
+        )
       ),
     );
   }
@@ -121,33 +119,31 @@ class _MainPageState extends State<MainPage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      bottomNavigationBar: new Theme(
-        data: Theme.of(context).copyWith(
-            primaryColor: Colors.black,
-            canvasColor: MainTheme.primary[200],
-            textTheme: Theme
-                .of(context)
-                .textTheme
-                .copyWith(caption: new TextStyle(color: Colors.black38))),
-        child: new BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          currentIndex: _screen,
-          onTap: (v) => this._changeScreen(v),
-          items: [
-            _buildNavItem("Wallets", FinanceIcons.wallet),
-            _buildNavItem("Transfer", ArrowIcons.transfer),
-            _buildNavItem("Settings", UIIcons.settings3),
-          ],
+        bottomNavigationBar: new Theme(
+          data: Theme.of(context).copyWith(
+              primaryColor: Colors.black,
+              canvasColor: MainTheme.primary[200],
+              textTheme: Theme
+                  .of(context)
+                  .textTheme
+                  .copyWith(caption: new TextStyle(color: Colors.black38))),
+          child: new BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            currentIndex: _screen,
+            onTap: (v) => this._changeScreen(v),
+            items: [
+              _buildNavItem("Cards", EcommerceIcons.cards),
+              _buildNavItem("Transfer", ArrowIcons.transfer),
+              _buildNavItem("Settings", UIIcons.settings3),
+            ],
+          ),
         ),
-      ),
-      appBar: _buildAppBar(),
-      body: PageView(controller: _controller, children: [
-        WalletsPage(),
-        TransferPage(),
-        TransferPage(),
-      ])// This trailing comma makes auto-formatting nicer for build methods.
-    );
+        appBar: _buildAppBar(),
+        body: PageView(controller: _controller, children: [
+          CardsPage(),
+          TransferPage(),
+          TransferPage(),
+        ]) // This trailing comma makes auto-formatting nicer for build methods.
+        );
   }
 }
-
-

@@ -27,6 +27,14 @@ class MarketingIcons {
 
 }
 
+class EcommerceIcons {
+  EcommerceIcons._();
+
+  /// <p><i class="material-icons md-36">360</i> &#x2014; material icon named "360".</p>
+  static const IconData cards = const IconData(0x0062, fontFamily: 'Ecommerce');
+
+}
+
 class FinanceIcons {
   FinanceIcons._();
 

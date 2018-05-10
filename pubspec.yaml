@@ -69,6 +69,9 @@ flutter:
   - family: Finance
     fonts:
       - asset: assets/fonts/icons/finance.ttf
+  - family: Ecommerce
+    fonts:
+      - asset: assets/fonts/icons/ecommerce.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
