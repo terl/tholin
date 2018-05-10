@@ -75,7 +75,7 @@ class _CardsPageState extends State<CardsPage> {
 
   _buildLeftRightBtns() {
     return new Container(
-        width: 460.0,
+        width: 500.0,
         child: new ButtonBar(
               alignment: MainAxisAlignment.spaceBetween,
               mainAxisSize: MainAxisSize.max,
@@ -112,7 +112,7 @@ class _CardsPageState extends State<CardsPage> {
   }
 
   _buildCard() {
-    const padding = EdgeInsets.only(top: 60.0, left: 26.0, right: 26.0, bottom: 40.0);
+    const padding = EdgeInsets.only(top: 60.0, left: 32.0, right: 32.0, bottom: 40.0);
     return new Stack(
         alignment: AlignmentDirectional.center,
         children: [

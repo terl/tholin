@@ -59,12 +59,15 @@ class _MainPageState extends State<MainPage> {
   PageController _controller = new PageController();
 
   void _changeScreen(index) {
+    _controller.animateToPage(index,
+        duration: new Duration(milliseconds: 120), curve: Curves.linear);
+    _changedScreen(index);
+  }
+
+  void _changedScreen(index) {
     setState(() {
       _screen = index;
     });
-
-    _controller.animateToPage(index,
-        duration: new Duration(milliseconds: 120), curve: Curves.linear);
   }
 
   void _onCenterAppBarBtnPress() {}
@@ -112,12 +115,6 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
         bottomNavigationBar: new Theme(
           data: Theme.of(context).copyWith(
@@ -139,11 +136,15 @@ class _MainPageState extends State<MainPage> {
           ),
         ),
         appBar: _buildAppBar(),
-        body: PageView(controller: _controller, children: [
-          CardsPage(),
-          TransferPage(),
-          TransferPage(),
-        ]) // This trailing comma makes auto-formatting nicer for build methods.
-        );
+        body: PageView(
+            onPageChanged: _changedScreen,
+            controller: _controller,
+            children: [
+              CardsPage(),
+              TransferPage(),
+              TransferPage(),
+            ]
+      ) // This trailing comma makes auto-formatting nicer for build methods.
+    );
   }
 }
