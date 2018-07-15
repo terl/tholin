@@ -7,6 +7,7 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:tholin/components/tholin_card.dart';
 import 'theme.dart';
 import 'package:tholin/flat_btn.dart';
 import 'package:tholin/slim_icons.dart';
@@ -32,38 +33,6 @@ class CardsPage extends StatefulWidget {
 class _CardsPageState extends State<CardsPage> {
   _sendPress() {}
 
-  _buildTotal() {
-    return new Row(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text("1200.545", textScaleFactor: 3.2, style: TextStyle(color: MainTheme.primary[300])),
-        Container(width: 4.0),
-        Text("XLM",
-            style: TextStyle(color: MainTheme.primaryLight[100], wordSpacing: 4.0),
-            textScaleFactor: 0.7)
-      ],
-    );
-  }
-
-  _buildCardName() {
-    return new Row(
-      mainAxisSize: MainAxisSize.max,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text("Savings",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                color: MainTheme.primary[200],
-                fontSize: 14.0,
-                fontFamily: "Montserrat",
-                fontWeight: FontWeight.bold)),
-      ],
-    );
-  }
-
   _buildIconButton(IconData ico) {
     return FloatingActionButton(
         mini: true,
@@ -87,52 +56,12 @@ class _CardsPageState extends State<CardsPage> {
     );
   }
 
-  _buildButtonForBar(String text) {
-    return
-      Expanded(
-          child: DullFlatButton(
-            c: MainTheme.primary[300],
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(0.0))),
-            child: Text(text, style: TextStyle(fontSize: 12.0, color: Colors.black87)),
-            onPressed: _sendPress
-          )
-      );
-  }
-
-  _buildButtonBar() {
-    return new Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      mainAxisSize: MainAxisSize.max,
-      children: <Widget>[
-        _buildButtonForBar("Send"),
-        _buildButtonForBar("Receive"),
-        _buildButtonForBar("Request"),
-      ],
-    );
-  }
 
   _buildCard() {
-    const padding = EdgeInsets.only(top: 60.0, left: 32.0, right: 32.0, bottom: 40.0);
     return new Stack(
         alignment: AlignmentDirectional.center,
         children: [
-          new Card(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(3.0))),
-            elevation: 20.0,
-            color: MainTheme.black[200],
-            margin: padding,
-            child: Container(
-              width: 320.0,
-              height: 180.0,
-              padding: EdgeInsets.only(top: 24.0, left: 0.0, right: 0.0, bottom: 0.0),
-              child: Column(mainAxisSize: MainAxisSize.min, children: [
-                _buildCardName(),
-                new Flexible(child: _buildTotal()),
-                Container(height: 12.0),
-                _buildButtonBar(),
-              ]),
-            )
-          ),
+          TholinCard("Savings", "1200.224", EdgeInsets.only(top: 60.0, left: 32.0, right: 32.0, bottom: 40.0), 20.0),
           _buildLeftRightBtns(),
         ]
     );

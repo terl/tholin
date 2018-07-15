@@ -13,6 +13,13 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  flutter_launcher_icons: "^0.3.2"
+
+flutter_icons:
+  image_path: "assets/logos/tholinite_app.png"
+  android: true
+  ios: true
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
@@ -60,6 +67,9 @@ flutter:
   - family: Arrows
     fonts:
       - asset: assets/fonts/icons/arrows.ttf
+  - family: Badges
+    fonts:
+      - asset: assets/fonts/icons/badges-symbols.ttf
   - family: UI
     fonts:
       - asset: assets/fonts/icons/ui.ttf
@@ -72,6 +82,23 @@ flutter:
   - family: Ecommerce
     fonts:
       - asset: assets/fonts/icons/ecommerce.ttf
+
+  - family: Ico54v4
+    fonts:
+      - asset: assets/fonts/icons54/icons54v4.ttf
+
+  - family: Ico54v3
+    fonts:
+      - asset: assets/fonts/icons54/icons54v3.ttf
+
+  - family: Ico54v2
+    fonts:
+      - asset: assets/fonts/icons54/icons54v2.ttf
+
+  - family: Ico54v1
+    fonts:
+      - asset: assets/fonts/icons54/icons54v1.ttf
+
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages

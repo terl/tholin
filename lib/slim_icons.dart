@@ -9,45 +9,63 @@
 
 import 'package:flutter/widgets.dart';
 
-class UIIcons {
-  UIIcons._();
-
-  /// <p><i class="material-icons md-36">360</i> &#x2014; material icon named "360".</p>
-  static const IconData account = const IconData(0x0033, fontFamily: 'UI');
-  static const IconData toggleSwitches = const IconData(0x0057, fontFamily: 'UI');
-  static const IconData settings3 = const IconData(0x0030, fontFamily: 'UI');
-
-}
-
 class MarketingIcons {
   MarketingIcons._();
-
-  /// <p><i class="material-icons md-36">360</i> &#x2014; material icon named "360".</p>
-  static const IconData lineGraph = const IconData(0x0064, fontFamily: 'Marketing');
-
+  static const IconData slimLineGraph = const IconData(0x0064, fontFamily: 'Marketing');
 }
 
 class EcommerceIcons {
   EcommerceIcons._();
-
-  /// <p><i class="material-icons md-36">360</i> &#x2014; material icon named "360".</p>
-  static const IconData cards = const IconData(0x0062, fontFamily: 'Ecommerce');
-
+  static const IconData slimCards = const IconData(0x0062, fontFamily: 'Ecommerce');
 }
-
-class FinanceIcons {
-  FinanceIcons._();
-
-  /// <p><i class="material-icons md-36">360</i> &#x2014; material icon named "360".</p>
-  static const IconData wallet = const IconData(0x0031, fontFamily: 'Finance');
-
-}
-
 
 class ArrowIcons {
   ArrowIcons._();
+  static const IconData slimTransfer = const IconData(0x0037, fontFamily: 'Arrows');
+}
 
-  /// <p><i class="material-icons md-36">360</i> &#x2014; material icon named "360".</p>
-  static const IconData transfer = const IconData(0x0037, fontFamily: 'Arrows');
+class BadgesIcons {
+  BadgesIcons._();
+  static const IconData slimStamp = const IconData(0x0076, fontFamily: 'Badges');
+  static const IconData awardStamp = const IconData(0xe933, fontFamily: 'Ico54v2');
+}
+
+
+class Icons54Icons {
+  Icons54Icons._();
+
+  static const IconData creditCard1 = const IconData(0xE9E4, fontFamily: 'Ico54v4');
+
+}
+
+
+class BasicIcons {
+  BasicIcons._();
+
+  static const IconData creditCard1 = const IconData(0xE9E4, fontFamily: 'Ico54v4');
+
+  static const IconData slimAccount = const IconData(0x0033, fontFamily: 'UI');
+  static const IconData slimToggleSwitches = const IconData(0x0057, fontFamily: 'UI');
+  static const IconData slimSettings3 = const IconData(0x0030, fontFamily: 'UI');
+
+  static const IconData gear = const IconData(0xecab, fontFamily: 'Ico54v1');
+
+}
+
+
+class Charts {
+  Charts._();
+
+  static const IconData pieChart1 = const IconData(0xeb81, fontFamily: 'Ico54v4');
+  static const IconData pieChart2 = const IconData(0xeb80, fontFamily: 'Ico54v4');
+
+}
+
+class BusinessFinance {
+  BusinessFinance._();
+
+  static const IconData moneyNetwork = const IconData(0xee09, fontFamily: 'Ico54v1');
+
+  static const IconData slimWallet = const IconData(0x0031, fontFamily: 'Finance');
 
 }

@@ -8,6 +8,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:tholin/slim_icons.dart';
+import 'package:tholin/summary_page.dart';
 import 'theme.dart';
 import 'cards_page.dart';
 import 'transfer_page.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Tholin',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           fontFamily: "Ginora Sans",
@@ -75,8 +76,7 @@ class _MainPageState extends State<MainPage> {
   _buildNavItem(String text, IconData icon) {
     return BottomNavigationBarItem(
       icon: new Icon(icon, size: 20.0),
-      title: new Text(text,
-          style: TextStyle(height: 1.3, fontWeight: FontWeight.bold)),
+      title: new Text(text, style: TextStyle(height: 1.3, fontSize: 14.0, fontWeight: FontWeight.bold)),
     );
   }
 
@@ -86,14 +86,11 @@ class _MainPageState extends State<MainPage> {
       elevation: 0.4,
       centerTitle: true,
       leading: IconButton(
-          padding:
-              EdgeInsets.only(left: 8.0, top: 12.0, right: 8.0, bottom: 8.0),
-          icon:
-              Icon(MarketingIcons.lineGraph, color: Colors.black, size: 20.0)),
+          padding: EdgeInsets.only(left: 8.0, top: 12.0, right: 8.0, bottom: 8.0),
+          icon: Icon(MarketingIcons.slimLineGraph, color: Colors.black, size: 20.0)),
       actions: [
         IconButton(
-            icon:
-                Icon(UIIcons.toggleSwitches, color: Colors.black, size: 20.0)),
+            icon: Icon(BasicIcons.gear, color: Colors.black, size: 20.0)),
       ],
       title: new Theme(
         isMaterialAppTheme: true,
@@ -129,9 +126,10 @@ class _MainPageState extends State<MainPage> {
             currentIndex: _screen,
             onTap: (v) => this._changeScreen(v),
             items: [
-              _buildNavItem("Cards", EcommerceIcons.cards),
-              _buildNavItem("Transfer", ArrowIcons.transfer),
-              _buildNavItem("Settings", UIIcons.settings3),
+              _buildNavItem("Summary", Charts.pieChart1),
+              _buildNavItem("Cards", BasicIcons.creditCard1),
+              _buildNavItem("Transfer", BusinessFinance.moneyNetwork),
+              _buildNavItem("Stamps", BadgesIcons.awardStamp),
             ],
           ),
         ),
@@ -140,6 +138,7 @@ class _MainPageState extends State<MainPage> {
             onPageChanged: _changedScreen,
             controller: _controller,
             children: [
+              SummaryPage(),
               CardsPage(),
               TransferPage(),
               TransferPage(),
